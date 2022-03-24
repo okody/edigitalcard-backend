@@ -16,13 +16,13 @@ class CreateSessionsTable extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('descriptoin');
+            $table->text('description');
             $table->date('fromDate');
             $table->date('toDate');
-            $table->time('fromTime');
-            $table->time('toTime');
-            $table->string('palce');
-            $table->int('scores');
+            $table->dateTime('fromTime');
+            $table->dateTime('toTime');
+            $table->string('place');
+            $table->double('scores')->default(0);
             $table->timestamps();
         });
     }
