@@ -20,4 +20,10 @@ class Session extends Model
         "toTime",
         "scores"
     ];
+
+
+    public function participactions()
+    {
+        return $this->belongsToMany(Student::class, "participactions");
+    }
 }

@@ -13,7 +13,9 @@ trait GeneralTraits
 
     public function imageSaver($image)
     {
-        $imageName = date("Y-m-d-h-i-s-ms") . ".png";
+
+  
+        $imageName = date("Y-m-d-h-i-s-ms") . "." . "png";
 
 
         $image = str_replace('data:image/png;base64,', '', $image);

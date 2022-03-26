@@ -21,15 +21,10 @@ class ShopController extends Controller
         $success = true;
         $data = [];
 
-
-       
         try {
-            if ($request->header('platform') == "application")
-                {
-                    $data =  Shop::with("shopItems")->get();
-                    
-                }
-            else
+            if ($request->header('platform') == "application") {
+                $data =  Shop::with("shopItems")->get();
+            } else
                 $data =  Shop::all();
         } catch (\Exception $exception) {
             $error = $exception->getMessage();
@@ -47,13 +42,9 @@ class ShopController extends Controller
         $data = [];
 
 
-
-
         try {
-
             $requestData =  $request->data;
             $requestData["image"] = $this->imageSaver($request->data["image"]);
-
 
             $shop = Shop::create($requestData);
             array_push($data, $shop);
